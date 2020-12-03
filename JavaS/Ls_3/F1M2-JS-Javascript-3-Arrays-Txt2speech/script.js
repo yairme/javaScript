@@ -20,7 +20,7 @@
     }
     
     
-    function randomizer(range = 1){ 
+    function randomizer(range = 3){ 
         // Math.random geeft een waarde  0 <= waarde < 1 (dus exclusief 1)
         return Math.floor((Math.random() * range));
     }
@@ -29,8 +29,10 @@
     function makeThisSentence(){
         let index = randomizer(arrayLength);
         let woord1 = onderwerp[index];
-        let woord2 = werkwoord[index];
-        let woord3 = restwoord[index];
+        let ind = randomizer(arrayLength);
+        let woord2 = werkwoord[ind];
+        let inde = randomizer(arrayLength);
+        let woord3 = restwoord[inde];
         let outputString = woord1 + " " + woord2 + " " + woord3;
         return outputString;
     }
@@ -57,6 +59,8 @@
         
     let plaatjes = ["Eating.jpg", "Running.jpg", "School.jpg", "Yoda.jpg"]
     let arrayLength = onderwerp.length;
+
+    //reset code
 
     function reset() {
         let thisTextWordtHet = returnThisSentence();
